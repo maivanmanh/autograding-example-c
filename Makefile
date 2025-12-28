@@ -1,8 +1,8 @@
-a.out:
-	gcc hello.c
+build:
+	gcc main.c -o main
 
 clean:
-	rm hello
+	rm main
 
-test: a.out
+test:
 	bash test.sh
