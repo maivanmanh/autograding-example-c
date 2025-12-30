@@ -6,7 +6,7 @@ RUNNER  = runner.sh
 .PHONY: build clean test
 
 build:
-	$(CC) $(CFLAGS) main.c -o $(TARGET)
+	$(CC) $(CFLAGS) ../main.c -o $(TARGET)
 
 clean:
 	rm -f $(TARGET)
