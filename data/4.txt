@@ -1,0 +1,4 @@
+0
+0
+---
+Enter x: Enter y: 0

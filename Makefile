@@ -1,17 +1,20 @@
+CC      = gcc
+CFLAGS  = -Wall -Wextra -O2
+TARGET  = main
+RUNNER  = runner.sh
+
+.PHONY: build clean test
+
 build:
-	gcc main.c -o main
+	$(CC) $(CFLAGS) main.c -o $(TARGET)
 
 clean:
-	rm main
+	rm -f $(TARGET)
 
-test-all:
-	bash test.sh
+# Run all tests
+test: build
+	bash $(RUNNER)
 
-test1:
-	bash test1.sh
-
-test2:
-	bash test2.sh
-
-test3:
-	bash test3.sh
+# Run individual test: test1, test2, ...
+test%: build
+	bash $(RUNNER) $*
